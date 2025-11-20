@@ -149,13 +149,13 @@ abstract class AppLocalizations {
   /// No description provided for @settings_light.
   ///
   /// In en, this message translates to:
-  /// **'light'**
+  /// **'Light'**
   String get settings_light;
 
   /// No description provided for @settings_dark.
   ///
   /// In en, this message translates to:
-  /// **'dark'**
+  /// **'Dark'**
   String get settings_dark;
 
   /// No description provided for @settings_webview.

@@ -1,3 +1,4 @@
+import 'package:easacc/app/app.dart';
 import 'package:easacc/core/enums/custom_icon_data.dart';
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:easacc/core/widgets/custom_icon.dart';
@@ -55,6 +56,9 @@ class _WebViewPageState extends State<WebViewPage> {
 
   @override
   Widget build(BuildContext context) {
+    final Locale? locale = AppWidget.getLocale(context);
+    final bool isArabic = locale?.languageCode == 'ar';
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -85,7 +89,10 @@ class _WebViewPageState extends State<WebViewPage> {
           ? const Center(
               child: CircularProgressIndicator(),
             )
-          : WebViewWidget(controller: controller),
+          : WebViewWidget(
+              controller: controller,
+              layoutDirection: isArabic ? TextDirection.rtl : TextDirection.ltr,
+            ),
     );
   }
 }

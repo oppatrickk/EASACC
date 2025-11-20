@@ -33,10 +33,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_theme_mode => 'Theme Mode';
 
   @override
-  String get settings_light => 'light';
+  String get settings_light => 'Light';
 
   @override
-  String get settings_dark => 'dark';
+  String get settings_dark => 'Dark';
 
   @override
   String get settings_webview => 'WEBVIEW';
