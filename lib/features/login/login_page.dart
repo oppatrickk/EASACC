@@ -1,4 +1,6 @@
+import 'package:easacc/core/enums/custom_icon_data.dart';
 import 'package:easacc/core/utils/extensions.dart';
+import 'package:easacc/core/widgets/custom_icon.dart';
 import 'package:easacc/features/login/widgets/login_button.dart';
 import 'package:flutter/material.dart';
 
@@ -38,6 +40,12 @@ class LoginPage extends StatelessWidget {
                         Text(
                           'English',
                           style: context.textTheme.bodyLarge?.copyWith(color: context.colorScheme.white),
+                        ),
+                        const SizedBox(width: 8),
+                        CustomIcon(
+                          icon: CustomIconData.chevronDown,
+                          size: 24,
+                          color: context.colorScheme.white,
                         ),
                       ],
                     ),
@@ -94,7 +102,7 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 16),
                     LoginButton(
                       icon: 'assets/img/facebook_logo.png',
-                      title: 'Login with facebook',
+                      title: 'Login with Facebook',
                       backgroundColor: context.colorScheme.facebook,
                       textColor: context.colorScheme.white,
                     ),

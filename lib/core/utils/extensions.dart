@@ -40,7 +40,15 @@ extension NavigatorContext on BuildContext {
     return Navigator.of(this).pop(result);
   }
 
-  Future<T?> pushNamed<T extends Object?>(String routeName, {Object? arguments}) {
-    return Navigator.of(this).pushNamed(routeName, arguments: arguments);
+  Future<T?> push<T extends Object?>(Widget page) {
+    return Navigator.of(this).push(
+      MaterialPageRoute<T>(builder: (_) => page),
+    );
+  }
+
+  Future<T?> pushReplacement<T extends Object?>(Widget page) {
+    return Navigator.of(this).pushReplacement(
+      MaterialPageRoute<T>(builder: (_) => page),
+    );
   }
 }
