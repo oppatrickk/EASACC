@@ -1,5 +1,5 @@
 import 'package:easacc/core/services/theme_service.dart';
-import 'package:easacc/features/webview/webview_page.dart';
+import 'package:easacc/features/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -24,7 +24,7 @@ class _AppWidgetState extends State<AppWidget> {
             theme: ThemeData(useMaterial3: true, colorScheme: themeService.lightScheme, fontFamily: 'Poppins'),
             darkTheme: ThemeData(useMaterial3: true, colorScheme: themeService.darkScheme, fontFamily: 'Poppins'),
             themeMode: themeService.themeMode,
-            home: const MyHomePage(title: 'Flutter Demo Home Page'),
+            home: LoginPage(),
           );
         },
       ),
