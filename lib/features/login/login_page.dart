@@ -1,14 +1,23 @@
+import 'package:easacc/app/app.dart';
 import 'package:easacc/core/enums/custom_icon_data.dart';
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:easacc/core/widgets/custom_icon.dart';
 import 'package:easacc/features/login/widgets/login_button.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  @override
   Widget build(BuildContext context) {
+    final Locale? locale = AppWidget.getLocale(context);
+    final bool isEnglish = locale?.languageCode == 'en';
+
     return Scaffold(
       backgroundColor: context.colorScheme.brand,
       body: SafeArea(
@@ -25,34 +34,44 @@ class LoginPage extends StatelessWidget {
                     'John Patrick Prieto',
                     style: context.textTheme.titleMedium?.semibold.copyWith(color: context.colorScheme.onPrimaryContainer),
                   ),
-                  Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-                    decoration: BoxDecoration(
-                      color: context.colorScheme.onPrimaryContainer.withAlpha(100),
-                      borderRadius: BorderRadius.circular(4),
-                      border: Border.all(
-                        color: context.colorScheme.white,
-                        width: 1,
-                      ),
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          'English',
-                          style: context.textTheme.bodyLarge?.copyWith(color: context.colorScheme.white),
-                        ),
-                        const SizedBox(width: 8),
-                        CustomIcon(
-                          icon: CustomIconData.chevronDown,
-                          size: 24,
+                  InkWell(
+                    onTap: () async {
+                      AppWidget.setLocale(
+                        context,
+                        isEnglish ? const Locale('ar') : const Locale('en'),
+                      );
+                      setState(() {});
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                      decoration: BoxDecoration(
+                        color: context.colorScheme.onPrimaryContainer.withAlpha(100),
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
                           color: context.colorScheme.white,
+                          width: 1,
                         ),
-                      ],
+                      ),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            isEnglish ? 'English' : 'Arabic',
+                            style: context.textTheme.bodyLarge?.copyWith(color: context.colorScheme.white),
+                          ),
+                          const SizedBox(width: 8),
+                          CustomIcon(
+                            icon: CustomIconData.chevronDown,
+                            size: 24,
+                            color: context.colorScheme.white,
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
+
             Expanded(
               child: Center(
                 child: Column(
@@ -71,7 +90,7 @@ class LoginPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(32),
                       ),
                       child: Text(
-                        'TASK DEMO APPICATION',
+                        'TASK DEMO APPLICATION',
                         style: context.textTheme.bodySmall?.bold.copyWith(color: context.colorScheme.white),
                       ),
                     ),
@@ -79,6 +98,7 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
             ),
+
             Container(
               decoration: BoxDecoration(
                 color: context.colorScheme.surface,

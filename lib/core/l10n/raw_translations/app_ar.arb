@@ -1,0 +1,8 @@
+{
+  "@@locale": "ar",
+  
+  "@_LOGIN": {},
+  "login_google": "Login with Google",
+  "login_facebook": "Login with Facebook",
+  "login_description": "TASK DEMO APPLICATION"
+}

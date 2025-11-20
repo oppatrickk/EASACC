@@ -1,3 +1,4 @@
+import 'package:easacc/app/app.dart';
 import 'package:easacc/core/enums/custom_icon_data.dart';
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:easacc/core/widgets/custom_icon.dart';
@@ -19,6 +20,9 @@ class SettingsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Locale? locale = AppWidget.getLocale(context);
+    final bool isArabic = locale?.languageCode == 'ar';
+
     return InkWell(
       onTap: onTap,
       child: Padding(
@@ -47,10 +51,10 @@ class SettingsItem extends StatelessWidget {
               title,
               style: context.textTheme.bodyMedium?.copyWith(color: context.colorScheme.text),
             ),
-            Spacer(),
+            const Spacer(),
             widget ?? const SizedBox.shrink(),
             CustomIcon(
-              icon: CustomIconData.chevronRight,
+              icon: isArabic ? CustomIconData.chevronLeft : CustomIconData.chevronRight,
               size: 24,
               color: context.colorScheme.text,
             ),

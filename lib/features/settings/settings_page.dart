@@ -1,3 +1,4 @@
+import 'package:easacc/app/app.dart';
 import 'package:easacc/core/enums/custom_icon_data.dart';
 import 'package:easacc/core/services/theme_service.dart';
 import 'package:easacc/core/utils/extensions.dart';
@@ -44,9 +45,33 @@ class SettingsPage extends StatelessWidget {
               'GENERAL',
               style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
             ),
-            SettingsItem(
-              title: 'Language',
-              icon: CustomIconData.language,
+            Builder(
+              builder: (BuildContext context) {
+                final Locale? currentLocale = AppWidget.getLocale(context);
+                final bool isEnglish = currentLocale?.languageCode == 'en';
+
+                return SettingsItem(
+                  onTap: () {
+                    AppWidget.setLocale(
+                      context,
+                      isEnglish ? const Locale('ar') : const Locale('en'),
+                    );
+                  },
+                  widget: Row(
+                    children: <Widget>[
+                      Text(
+                        isEnglish ? 'English' : 'Arabic',
+                        style: context.textTheme.labelMedium?.copyWith(
+                          color: context.colorScheme.onSurfaceVariant,
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                    ],
+                  ),
+                  title: 'Language',
+                  icon: CustomIconData.language,
+                );
+              },
             ),
             Consumer<ThemeService>(
               builder: (BuildContext context, ThemeService themeService, Widget? child) {

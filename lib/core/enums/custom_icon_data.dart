@@ -9,6 +9,7 @@ enum CustomIconData {
   settings('assets/icons/setting-07.svg'),
   arrowLeft('assets/icons/arrow-left-02.svg'),
   chevronRight('assets/icons/arrow-right-01.svg'),
+  chevronLeft('assets/icons/arrow-left-01.svg'),
   chevronDown('assets/icons/arrow-down-01.svg');
 
   const CustomIconData(this.assetLocation);
