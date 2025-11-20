@@ -8,6 +8,7 @@ enum CustomIconData {
   noUrl('assets/icons/unlink-04.svg'),
   settings('assets/icons/setting-07.svg'),
   arrowLeft('assets/icons/arrow-left-02.svg'),
+  chevronRight('assets/icons/arrow-right-01.svg'),
   chevronDown('assets/icons/arrow-down-01.svg');
 
   const CustomIconData(this.assetLocation);
