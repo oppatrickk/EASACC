@@ -1,0 +1,18 @@
+{
+  "dart.flutterSdkPath": ".fvm/versions/3.35.0",
+  "search.exclude": {
+    "**/.fvm": true
+  },
+  "files.watcherExclude": {
+    "**/.fvm": true
+  },
+  "dart.lineLength": 150,
+  "[dart]": {
+    "editor.rulers": [
+      150
+    ]
+  },
+  "cmake.ignoreCMakeListsMissing": true,
+  "explorer.fileNesting.enabled": true,
+  "java.configuration.updateBuildConfiguration": "interactive"
+}
