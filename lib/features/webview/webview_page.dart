@@ -58,7 +58,7 @@ class _WebViewPageState extends State<WebViewPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'WebView',
+          context.l10n.webview,
           style: context.textTheme.titleLarge?.copyWith(color: context.colorScheme.white),
         ),
         backgroundColor: context.colorScheme.brand,

@@ -13,13 +13,16 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Locale? locale = AppWidget.getLocale(context);
+    final bool isArabic = locale?.languageCode == 'ar';
+
     return Scaffold(
       appBar: AppBar(
         leading: Row(
           children: <Widget>[
             IconButton(
               icon: CustomIcon(
-                icon: CustomIconData.arrowLeft,
+                icon: isArabic ? CustomIconData.arrowRight : CustomIconData.arrowLeft,
                 size: 24,
                 color: context.colorScheme.white,
               ),
@@ -27,7 +30,7 @@ class SettingsPage extends StatelessWidget {
             ),
             const SizedBox(width: 8),
             Text(
-              'Settings',
+              context.l10n.settings,
               style: context.textTheme.titleLarge?.copyWith(color: context.colorScheme.white),
             ),
           ],
@@ -42,36 +45,29 @@ class SettingsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
-              'GENERAL',
+              context.l10n.settings_general,
               style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
             ),
-            Builder(
-              builder: (BuildContext context) {
-                final Locale? currentLocale = AppWidget.getLocale(context);
-                final bool isEnglish = currentLocale?.languageCode == 'en';
-
-                return SettingsItem(
-                  onTap: () {
-                    AppWidget.setLocale(
-                      context,
-                      isEnglish ? const Locale('ar') : const Locale('en'),
-                    );
-                  },
-                  widget: Row(
-                    children: <Widget>[
-                      Text(
-                        isEnglish ? 'English' : 'Arabic',
-                        style: context.textTheme.labelMedium?.copyWith(
-                          color: context.colorScheme.onSurfaceVariant,
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                    ],
-                  ),
-                  title: 'Language',
-                  icon: CustomIconData.language,
+            SettingsItem(
+              onTap: () {
+                AppWidget.setLocale(
+                  context,
+                  isArabic ? const Locale('en') : const Locale('ar'),
                 );
               },
+              widget: Row(
+                children: <Widget>[
+                  Text(
+                    isArabic ? 'Arabic' : 'English',
+                    style: context.textTheme.labelMedium?.copyWith(
+                      color: context.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+              ),
+              title: context.l10n.settings_language,
+              icon: CustomIconData.language,
             ),
             Consumer<ThemeService>(
               builder: (BuildContext context, ThemeService themeService, Widget? child) {
@@ -94,33 +90,33 @@ class SettingsPage extends StatelessWidget {
                   widget: Row(
                     children: <Widget>[
                       Text(
-                        isDarkMode ? 'Dark' : 'Light',
+                        isDarkMode ? context.l10n.settings_dark : context.l10n.settings_light,
                         style: context.textTheme.labelMedium?.copyWith(color: context.colorScheme.onSurfaceVariant),
                       ),
                       SizedBox(width: 8),
                     ],
                   ),
-                  title: 'Theme Mode',
+                  title: context.l10n.settings_theme_mode,
                   icon: CustomIconData.theme,
                 );
               },
             ),
             const SizedBox(height: 32),
             Text(
-              'WEBVIEW',
+              context.l10n.settings_webview,
               style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
             ),
             SettingsItem(
-              title: 'Configure URL',
+              title: context.l10n.settings_webview_configure,
               icon: CustomIconData.url,
             ),
             const SizedBox(height: 32),
             Text(
-              'NETWORK DEVICES',
+              context.l10n.settings_network_devices,
               style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
             ),
             SettingsItem(
-              title: 'Configure Connected Devices',
+              title: context.l10n.settings_configure,
               icon: CustomIconData.devices,
             ),
             Spacer(),
@@ -145,7 +141,7 @@ class SettingsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
-                    'Logout',
+                    context.l10n.settings_logout,
                     textAlign: TextAlign.center,
                     overflow: TextOverflow.ellipsis,
                     style: context.textTheme.titleMedium?.copyWith(color: context.colorScheme.error),

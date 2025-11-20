@@ -16,4 +16,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get login_description => 'TASK DEMO APPLICATION';
+
+  @override
+  String get webview => 'WebView';
+
+  @override
+  String get settings => 'Settings';
+
+  @override
+  String get settings_general => 'GENERAL';
+
+  @override
+  String get settings_language => 'Language';
+
+  @override
+  String get settings_theme_mode => 'Theme Mode';
+
+  @override
+  String get settings_light => 'light';
+
+  @override
+  String get settings_dark => 'dark';
+
+  @override
+  String get settings_webview => 'WEBVIEW';
+
+  @override
+  String get settings_webview_configure => 'Configure URL';
+
+  @override
+  String get settings_network_devices => 'NETWORK DEVICES';
+
+  @override
+  String get settings_configure => 'Configure Connected Devices';
+
+  @override
+  String get settings_logout => 'Logout';
 }

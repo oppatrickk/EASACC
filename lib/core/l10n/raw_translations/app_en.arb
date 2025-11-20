@@ -4,5 +4,21 @@
   "@_LOGIN": {},
   "login_google": "Login with Google",
   "login_facebook": "Login with Facebook",
-  "login_description": "TASK DEMO APPLICATION"
+  "login_description": "TASK DEMO APPLICATION",
+
+  "@_WEBVIEW": {},
+  "webview": "WebView",
+
+  "@_SETTINGS": {},
+  "settings": "Settings",
+  "settings_general": "GENERAL",
+  "settings_language": "Language",
+  "settings_theme_mode": "Theme Mode",
+  "settings_light": "light",
+  "settings_dark": "dark",
+  "settings_webview": "WEBVIEW",
+  "settings_webview_configure": "Configure URL",
+  "settings_network_devices": "NETWORK DEVICES",
+  "settings_configure": "Configure Connected Devices",
+  "settings_logout": "Logout"
 }

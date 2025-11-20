@@ -115,6 +115,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'TASK DEMO APPLICATION'**
   String get login_description;
+
+  /// No description provided for @webview.
+  ///
+  /// In en, this message translates to:
+  /// **'WebView'**
+  String get webview;
+
+  /// No description provided for @settings.
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settings;
+
+  /// No description provided for @settings_general.
+  ///
+  /// In en, this message translates to:
+  /// **'GENERAL'**
+  String get settings_general;
+
+  /// No description provided for @settings_language.
+  ///
+  /// In en, this message translates to:
+  /// **'Language'**
+  String get settings_language;
+
+  /// No description provided for @settings_theme_mode.
+  ///
+  /// In en, this message translates to:
+  /// **'Theme Mode'**
+  String get settings_theme_mode;
+
+  /// No description provided for @settings_light.
+  ///
+  /// In en, this message translates to:
+  /// **'light'**
+  String get settings_light;
+
+  /// No description provided for @settings_dark.
+  ///
+  /// In en, this message translates to:
+  /// **'dark'**
+  String get settings_dark;
+
+  /// No description provided for @settings_webview.
+  ///
+  /// In en, this message translates to:
+  /// **'WEBVIEW'**
+  String get settings_webview;
+
+  /// No description provided for @settings_webview_configure.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure URL'**
+  String get settings_webview_configure;
+
+  /// No description provided for @settings_network_devices.
+  ///
+  /// In en, this message translates to:
+  /// **'NETWORK DEVICES'**
+  String get settings_network_devices;
+
+  /// No description provided for @settings_configure.
+  ///
+  /// In en, this message translates to:
+  /// **'Configure Connected Devices'**
+  String get settings_configure;
+
+  /// No description provided for @settings_logout.
+  ///
+  /// In en, this message translates to:
+  /// **'Logout'**
+  String get settings_logout;
 }
 
 class _AppLocalizationsDelegate

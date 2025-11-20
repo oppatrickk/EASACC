@@ -90,7 +90,7 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(32),
                       ),
                       child: Text(
-                        'TASK DEMO APPLICATION',
+                        context.l10n.login_description,
                         style: context.textTheme.bodySmall?.bold.copyWith(color: context.colorScheme.white),
                       ),
                     ),
@@ -112,7 +112,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: <Widget>[
                     LoginButton(
-                      title: 'Login with Google',
+                      title: context.l10n.login_google,
                       icon: 'assets/img/google_logo.png',
                       border: Border.all(
                         color: context.colorScheme.outline,
@@ -122,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                     const SizedBox(height: 16),
                     LoginButton(
                       icon: 'assets/img/facebook_logo.png',
-                      title: 'Login with Facebook',
+                      title: context.l10n.login_facebook,
                       backgroundColor: context.colorScheme.facebook,
                       textColor: context.colorScheme.white,
                     ),

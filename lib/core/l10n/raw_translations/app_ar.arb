@@ -1,8 +1,24 @@
 {
   "@@locale": "ar",
-  
+
   "@_LOGIN": {},
-  "login_google": "Login with Google",
-  "login_facebook": "Login with Facebook",
-  "login_description": "TASK DEMO APPLICATION"
+  "login_google": "تسجيل الدخول عبر Google",
+  "login_facebook": "تسجيل الدخول عبر Facebook",
+  "login_description": "تطبيق تجريبي",
+
+  "@_WEBVIEW": {},
+  "webview": "عرض ويب",
+
+  "@_SETTINGS": {},
+  "settings": "الإعدادات",
+  "settings_general": "عام",
+  "settings_language": "اللغة",
+  "settings_theme_mode": "وضع السمة",
+  "settings_light": "فاتح",
+  "settings_dark": "داكن",
+  "settings_webview": "عرض ويب",
+  "settings_webview_configure": "تكوين الرابط",
+  "settings_network_devices": "الأجهزة المتصلة بالشبكة",
+  "settings_configure": "تكوين الأجهزة المتصلة",
+  "settings_logout": "تسجيل الخروج"
 }
