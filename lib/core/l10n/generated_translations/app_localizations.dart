@@ -122,6 +122,48 @@ abstract class AppLocalizations {
   /// **'WebView'**
   String get webview;
 
+  /// No description provided for @webview_recent.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent'**
+  String get webview_recent;
+
+  /// No description provided for @webview_no_recent.
+  ///
+  /// In en, this message translates to:
+  /// **'No Recent URLs Yet!'**
+  String get webview_no_recent;
+
+  /// No description provided for @webview_first_url_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Set your first URL in the Edit Icon in the App bar'**
+  String get webview_first_url_title;
+
+  /// No description provided for @webview_first_url_description.
+  ///
+  /// In en, this message translates to:
+  /// **'You can also change this in the settings!'**
+  String get webview_first_url_description;
+
+  /// No description provided for @webview_cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get webview_cancel;
+
+  /// No description provided for @webview_save.
+  ///
+  /// In en, this message translates to:
+  /// **'Save'**
+  String get webview_save;
+
+  /// No description provided for @webview_invalid_url.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid URL. Try again!'**
+  String get webview_invalid_url;
+
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:

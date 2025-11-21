@@ -8,6 +8,13 @@
 
   "@_WEBVIEW": {},
   "webview": "WebView",
+  "webview_recent": "Recent",
+  "webview_no_recent": "No Recent URLs Yet!",
+  "webview_first_url_title": "Set your first URL in the Edit Icon in the App bar",
+  "webview_first_url_description": "You can also change this in the settings!",
+  "webview_cancel": "Cancel",
+  "webview_save": "Save",
+  "webview_invalid_url": "Invalid URL. Try again!",
 
   "@_SETTINGS": {},
   "settings": "Settings",

@@ -1,16 +1,23 @@
 import 'package:easacc/app/app.dart';
 import 'package:easacc/core/enums/custom_icon_data.dart';
+import 'package:easacc/core/services/shared_preference_service.dart';
 import 'package:easacc/core/services/theme_service.dart';
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:easacc/core/widgets/custom_icon.dart';
 import 'package:easacc/features/login/login_page.dart';
 import 'package:easacc/features/settings/widgets/settings_item.dart';
+import 'package:easacc/features/webview/widgets/web_view_input.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
 
+  @override
+  State<SettingsPage> createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     final Locale? locale = AppWidget.getLocale(context);
@@ -26,7 +33,7 @@ class SettingsPage extends StatelessWidget {
                 size: 24,
                 color: context.colorScheme.white,
               ),
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => Navigator.pop(context, true),
             ),
             const SizedBox(width: 8),
             Text(
@@ -107,6 +114,16 @@ class SettingsPage extends StatelessWidget {
               style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
             ),
             SettingsItem(
+              onTap: () async {
+                final String? result = await showDialog(
+                  context: context,
+                  builder: (_) => WebViewInput(),
+                );
+                if (result == null) return;
+
+                await SharedPreferenceService.saveWebViewUrl(result);
+                setState(() {});
+              },
               title: context.l10n.settings_webview_configure,
               icon: CustomIconData.url,
             ),
@@ -122,7 +139,7 @@ class SettingsPage extends StatelessWidget {
             Spacer(),
             Center(
               child: Text(
-                ' © John Patrick Prieto',
+                '© John Patrick Prieto',
                 style: context.textTheme.bodySmall?.copyWith(color: context.colorScheme.text),
               ),
             ),

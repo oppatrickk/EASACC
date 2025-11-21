@@ -7,6 +7,7 @@ enum CustomIconData {
   url('assets/icons/link-02.svg'),
   noUrl('assets/icons/unlink-04.svg'),
   settings('assets/icons/setting-07.svg'),
+  cancel('assets/icons/cancel-01.svg'),
   arrowLeft('assets/icons/arrow-left-02.svg'),
   arrowRight('assets/icons/arrow-right-02.svg'),
   chevronRight('assets/icons/arrow-right-01.svg'),

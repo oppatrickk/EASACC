@@ -21,6 +21,29 @@ class AppLocalizationsEn extends AppLocalizations {
   String get webview => 'WebView';
 
   @override
+  String get webview_recent => 'Recent';
+
+  @override
+  String get webview_no_recent => 'No Recent URLs Yet!';
+
+  @override
+  String get webview_first_url_title =>
+      'Set your first URL in the Edit Icon in the App bar';
+
+  @override
+  String get webview_first_url_description =>
+      'You can also change this in the settings!';
+
+  @override
+  String get webview_cancel => 'Cancel';
+
+  @override
+  String get webview_save => 'Save';
+
+  @override
+  String get webview_invalid_url => 'Invalid URL. Try again!';
+
+  @override
   String get settings => 'Settings';
 
   @override
