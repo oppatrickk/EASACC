@@ -1,6 +1,7 @@
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_blue_plus/flutter_blue_plus.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 class NetworkDevicesDialog extends StatefulWidget {
   const NetworkDevicesDialog({super.key});
@@ -18,10 +19,10 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
   @override
   void initState() {
     super.initState();
-    checkBluetooth();
+    checkBluetoothAndPermissions();
   }
 
-  Future<void> checkBluetooth() async {
+  Future<void> checkBluetoothAndPermissions() async {
     if (!await FlutterBluePlus.isSupported) {
       debugPrint('Bluetooth not supported');
       setState(() => bluetoothOn = false);
@@ -30,6 +31,17 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
 
     bool isOn = await FlutterBluePlus.isOn;
     if (!isOn) {
+      setState(() => bluetoothOn = false);
+      return;
+    }
+
+    // Request permissions before scanning
+    final PermissionStatus statusScan = await Permission.bluetoothScan.request();
+    final PermissionStatus statusConnect = await Permission.bluetoothConnect.request();
+    final PermissionStatus statusLocation = await Permission.location.request();
+
+    if (!statusScan.isGranted || !statusConnect.isGranted || !statusLocation.isGranted) {
+      // Permission denied
       setState(() => bluetoothOn = false);
       return;
     }
@@ -45,7 +57,7 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
 
     FlutterBluePlus.scanResults.listen((List<ScanResult> results) {
       for (ScanResult result in results) {
-        if (!devices.any((ScanResult d) => d.device.id == result.device.id)) {
+        if (!devices.any((ScanResult d) => d.device.remoteId == result.device.remoteId)) {
           devices.add(result);
         }
       }
@@ -62,6 +74,7 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
 
       if (!mounted) return;
 
+      // Close the dialog
       Navigator.pop(context);
 
       ScaffoldMessenger.of(context).showSnackBar(
