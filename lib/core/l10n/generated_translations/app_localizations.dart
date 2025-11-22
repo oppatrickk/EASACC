@@ -215,7 +215,7 @@ abstract class AppLocalizations {
   /// No description provided for @settings_network_devices.
   ///
   /// In en, this message translates to:
-  /// **'NETWORK DEVICES'**
+  /// **'Network Devices'**
   String get settings_network_devices;
 
   /// No description provided for @settings_configure.

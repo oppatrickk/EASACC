@@ -68,7 +68,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settings_webview_configure => 'Configure URL';
 
   @override
-  String get settings_network_devices => 'NETWORK DEVICES';
+  String get settings_network_devices => 'Network Devices';
 
   @override
   String get settings_configure => 'Configure Connected Devices';

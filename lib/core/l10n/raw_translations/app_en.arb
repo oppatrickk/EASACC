@@ -25,7 +25,7 @@
   "settings_dark": "Dark",
   "settings_webview": "WEBVIEW",
   "settings_webview_configure": "Configure URL",
-  "settings_network_devices": "NETWORK DEVICES",
+  "settings_network_devices": "Network Devices",
   "settings_configure": "Configure Connected Devices",
   "settings_logout": "Logout"
 }

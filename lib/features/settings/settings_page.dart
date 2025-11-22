@@ -5,6 +5,7 @@ import 'package:easacc/core/services/theme_service.dart';
 import 'package:easacc/core/utils/extensions.dart';
 import 'package:easacc/core/widgets/custom_icon.dart';
 import 'package:easacc/features/login/login_page.dart';
+import 'package:easacc/features/settings/widgets/network_devices_dialog.dart';
 import 'package:easacc/features/settings/widgets/settings_item.dart';
 import 'package:easacc/features/webview/widgets/web_view_input.dart';
 import 'package:flutter/material.dart';
@@ -136,13 +137,20 @@ class _SettingsPageState extends State<SettingsPage> {
                   const SizedBox(height: 32),
 
                   Text(
-                    context.l10n.settings_network_devices,
+                    context.l10n.settings_network_devices.toUpperCase(),
                     style: context.textTheme.bodySmall?.semibold.copyWith(color: context.colorScheme.text),
                   ),
 
                   SettingsItem(
                     title: context.l10n.settings_configure,
                     icon: CustomIconData.devices,
+                    onTap: () async {
+                      final String? result = await showDialog(
+                        context: context,
+                        builder: (_) => NetworkDevicesDialog(),
+                      );
+                      if (result == null) return;
+                    },
                   ),
 
                   const SizedBox(height: 40),
