@@ -164,6 +164,36 @@ abstract class AppLocalizations {
   /// **'Invalid URL. Try again!'**
   String get webview_invalid_url;
 
+  /// No description provided for @network_devices_bluetooth_off.
+  ///
+  /// In en, this message translates to:
+  /// **'Bluetooth is turned off. Please turn it on to scan devices.'**
+  String get network_devices_bluetooth_off;
+
+  /// No description provided for @network_devices_select_device.
+  ///
+  /// In en, this message translates to:
+  /// **'Select a Device'**
+  String get network_devices_select_device;
+
+  /// No description provided for @network_devices_unknown_device.
+  ///
+  /// In en, this message translates to:
+  /// **'(Unknown Device)'**
+  String get network_devices_unknown_device;
+
+  /// No description provided for @network_devices_connect.
+  ///
+  /// In en, this message translates to:
+  /// **'Connect'**
+  String get network_devices_connect;
+
+  /// No description provided for @network_devices_cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get network_devices_cancel;
+
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:

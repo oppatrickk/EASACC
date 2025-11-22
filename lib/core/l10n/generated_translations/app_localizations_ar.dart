@@ -9,39 +9,55 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get login_google => 'تسجيل الدخول عبر Google';
+  String get login_google => 'تسجيل الدخول باستخدام Google';
 
   @override
-  String get login_facebook => 'تسجيل الدخول عبر Facebook';
+  String get login_facebook => 'تسجيل الدخول باستخدام Facebook';
 
   @override
   String get login_description => 'تطبيق تجريبي';
 
   @override
-  String get webview => 'عرض ويب';
+  String get webview => 'عرض الويب';
 
   @override
-  String get webview_recent => 'Recent';
+  String get webview_recent => 'الأخيرة';
 
   @override
-  String get webview_no_recent => 'No Recent URLs Yet!';
+  String get webview_no_recent => 'لا توجد روابط حديثة بعد!';
 
   @override
   String get webview_first_url_title =>
-      'Set your first URL in the Edit Icon in the App bar';
+      'قم بتعيين الرابط الأول باستخدام أيقونة التحرير في شريط التطبيق';
 
   @override
   String get webview_first_url_description =>
-      'You can also change this in the settings!';
+      'يمكنك أيضًا تغييره في الإعدادات!';
 
   @override
-  String get webview_cancel => 'Cancel';
+  String get webview_cancel => 'إلغاء';
 
   @override
-  String get webview_save => 'Save';
+  String get webview_save => 'حفظ';
 
   @override
-  String get webview_invalid_url => 'Invalid URL. Try again!';
+  String get webview_invalid_url => 'رابط غير صالح. حاول مرة أخرى!';
+
+  @override
+  String get network_devices_bluetooth_off =>
+      'تم إيقاف تشغيل البلوتوث. يرجى تشغيله لمسح الأجهزة.';
+
+  @override
+  String get network_devices_select_device => 'اختر جهازًا';
+
+  @override
+  String get network_devices_unknown_device => '(جهاز غير معروف)';
+
+  @override
+  String get network_devices_connect => 'اتصال';
+
+  @override
+  String get network_devices_cancel => 'إلغاء';
 
   @override
   String get settings => 'الإعدادات';
@@ -62,13 +78,13 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settings_dark => 'داكن';
 
   @override
-  String get settings_webview => 'عرض ويب';
+  String get settings_webview => 'عرض الويب';
 
   @override
   String get settings_webview_configure => 'تكوين الرابط';
 
   @override
-  String get settings_network_devices => 'الأجهزة المتصلة بالشبكة';
+  String get settings_network_devices => 'الأجهزة الشبكية';
 
   @override
   String get settings_configure => 'تكوين الأجهزة المتصلة';

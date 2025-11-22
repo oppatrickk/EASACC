@@ -44,6 +44,22 @@ class AppLocalizationsEn extends AppLocalizations {
   String get webview_invalid_url => 'Invalid URL. Try again!';
 
   @override
+  String get network_devices_bluetooth_off =>
+      'Bluetooth is turned off. Please turn it on to scan devices.';
+
+  @override
+  String get network_devices_select_device => 'Select a Device';
+
+  @override
+  String get network_devices_unknown_device => '(Unknown Device)';
+
+  @override
+  String get network_devices_connect => 'Connect';
+
+  @override
+  String get network_devices_cancel => 'Cancel';
+
+  @override
   String get settings => 'Settings';
 
   @override

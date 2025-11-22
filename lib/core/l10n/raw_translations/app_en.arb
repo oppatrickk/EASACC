@@ -16,6 +16,13 @@
   "webview_save": "Save",
   "webview_invalid_url": "Invalid URL. Try again!",
 
+  "@_NETWORK_DEVICES": {},
+  "network_devices_bluetooth_off": "Bluetooth is turned off. Please turn it on to scan devices.",
+  "network_devices_select_device": "Select a Device",
+  "network_devices_unknown_device": "(Unknown Device)",
+  "network_devices_connect": "Connect",
+  "network_devices_cancel": "Cancel",
+
   "@_SETTINGS": {},
   "settings": "Settings",
   "settings_general": "GENERAL",

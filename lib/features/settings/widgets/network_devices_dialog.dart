@@ -94,7 +94,7 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
       title: Row(
         children: <Widget>[
           Text(
-            'Network Devices',
+            context.l10n.settings_network_devices,
             style: context.textTheme.titleLarge?.semibold.copyWith(color: context.colorScheme.primary),
           ),
           const Spacer(),
@@ -106,7 +106,7 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
       ),
       content: !bluetoothOn
           ? Text(
-              'Bluetooth is turned off. Please turn it on to scan devices.',
+              context.l10n.network_devices_bluetooth_off,
               style: context.textTheme.bodyMedium?.copyWith(color: context.colorScheme.error),
             )
           : devices.isEmpty
@@ -114,10 +114,12 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
           : DropdownButton<String>(
               itemHeight: 60,
               value: selectedDeviceId,
-              hint: const Text('Select a device'),
+              hint: Text(context.l10n.network_devices_select_device),
               isExpanded: true,
               items: devices.map((ScanResult device) {
-                final String name = device.advertisementData.advName.isEmpty ? '(Unknown Device)' : device.advertisementData.advName;
+                final String name = device.advertisementData.advName.isEmpty
+                    ? context.l10n.network_devices_unknown_device
+                    : device.advertisementData.advName;
                 return DropdownMenuItem<String>(
                   value: device.device.remoteId.str,
                   child: Text(
@@ -134,7 +136,10 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
             ),
       actions: <Widget>[
         TextButton(
-          child: Text('Cancel', style: context.textTheme.bodyMedium?.copyWith(color: context.colorScheme.onSurfaceVariant)),
+          child: Text(
+            context.l10n.network_devices_cancel,
+            style: context.textTheme.bodyMedium?.copyWith(color: context.colorScheme.onSurfaceVariant),
+          ),
           onPressed: () => Navigator.pop(context),
         ),
         FilledButton(
@@ -153,7 +158,7 @@ class _NetworkDevicesDialogState extends State<NetworkDevicesDialog> {
                     strokeWidth: 2,
                   ),
                 )
-              : const Text('Connect'),
+              : Text(context.l10n.network_devices_connect),
         ),
       ],
     );

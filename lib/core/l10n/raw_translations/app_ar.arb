@@ -1,13 +1,27 @@
 {
   "@@locale": "ar",
-
+  
   "@_LOGIN": {},
-  "login_google": "تسجيل الدخول عبر Google",
-  "login_facebook": "تسجيل الدخول عبر Facebook",
+  "login_google": "تسجيل الدخول باستخدام Google",
+  "login_facebook": "تسجيل الدخول باستخدام Facebook",
   "login_description": "تطبيق تجريبي",
 
   "@_WEBVIEW": {},
-  "webview": "عرض ويب",
+  "webview": "عرض الويب",
+  "webview_recent": "الأخيرة",
+  "webview_no_recent": "لا توجد روابط حديثة بعد!",
+  "webview_first_url_title": "قم بتعيين الرابط الأول باستخدام أيقونة التحرير في شريط التطبيق",
+  "webview_first_url_description": "يمكنك أيضًا تغييره في الإعدادات!",
+  "webview_cancel": "إلغاء",
+  "webview_save": "حفظ",
+  "webview_invalid_url": "رابط غير صالح. حاول مرة أخرى!",
+
+  "@_NETWORK_DEVICES": {},
+  "network_devices_bluetooth_off": "تم إيقاف تشغيل البلوتوث. يرجى تشغيله لمسح الأجهزة.",
+  "network_devices_select_device": "اختر جهازًا",
+  "network_devices_unknown_device": "(جهاز غير معروف)",
+  "network_devices_connect": "اتصال",
+  "network_devices_cancel": "إلغاء",
 
   "@_SETTINGS": {},
   "settings": "الإعدادات",
@@ -16,9 +30,9 @@
   "settings_theme_mode": "وضع السمة",
   "settings_light": "فاتح",
   "settings_dark": "داكن",
-  "settings_webview": "عرض ويب",
+  "settings_webview": "عرض الويب",
   "settings_webview_configure": "تكوين الرابط",
-  "settings_network_devices": "الأجهزة المتصلة بالشبكة",
+  "settings_network_devices": "الأجهزة الشبكية",
   "settings_configure": "تكوين الأجهزة المتصلة",
   "settings_logout": "تسجيل الخروج"
 }
